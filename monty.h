@@ -52,4 +52,28 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void mon_push(stack_t **head, unsigned int number);
+void mon_pall(stack_t **head, unsigned int number);
+void mon_pint(stack_t **head, unsigned int number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
+void mon_pop(stack_t **head, unsigned int counter);
+void mon_swap(stack_t **head, unsigned int counter);
+void mon_add(stack_t **head, unsigned int counter);
+void mon_nop(stack_t **head, unsigned int counter);
+void mon_sub(stack_t **head, unsigned int counter);
+void mon_div(stack_t **head, unsigned int counter);
+void mon_mul(stack_t **head, unsigned int counter);
+void mon_mod(stack_t **head, unsigned int counter);
+void mon_pchar(stack_t **head, unsigned int counter);
+void mon_pstr(stack_t **head, unsigned int counter);
+void mon_rotl(stack_t **head, unsigned int counter);
+void mon_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void mon_queue(stack_t **head, unsigned int counter);
+void mon_stack(stack_t **head, unsigned int counter);
+#endif
